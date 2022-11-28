@@ -22,7 +22,7 @@ docker-compose run api rake db:migrate RAILS_ENV=test
 - [x] analyze and plan
 - [x] setup dev environment
 - [x] bootstrap Rails API
-- [ ] create category resource
+- [x] create category resource
 - [ ] create video resource
 - [ ] generate React app
 - [ ] create video upload page
