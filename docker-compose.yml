@@ -20,5 +20,16 @@ services:
     depends_on:
       - db
 
+  spa:
+    build:
+      context: ./spa
+    volumes:
+      - ./spa:/app
+      - /app/node_modules
+    ports:
+      - "4000:4000"
+    depends_on:
+      - api
+
 volumes:
   api-db:
