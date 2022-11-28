@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
   resources :categories, only: :index
-  resources :videos
+  resources :videos, only: [:index, :create]
 end
