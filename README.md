@@ -13,7 +13,7 @@ A simple video library app made with Rails and React.
 
 ```shell
 docker-compose up
-docker-compose run api rake db:create
+docker-compose run api rake db:setup
 docker-compose run api rake db:migrate
 docker-compose run api rake db:migrate RAILS_ENV=test
 ```
