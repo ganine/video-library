@@ -19,6 +19,6 @@ class VideosController < ApplicationController
   private
 
   def video_params
-    params.permit(:title, :category_id)
+    params.permit(:title, :category_id, :file)
   end
 end
