@@ -1,6 +1,7 @@
 FROM ruby:3.1.3
 
-RUN apt-get update -qq && apt-get install -y --no-install-recommends postgresql-client
+RUN apt-get update -qq && apt-get install -y --no-install-recommends\
+  postgresql-client ffmpeg libvips
 
 WORKDIR /app
 COPY Gemfile /app/Gemfile
