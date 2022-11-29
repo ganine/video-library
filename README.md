@@ -12,10 +12,24 @@ A simple video library app made with Rails and React.
 ### Installation
 
 ```shell
-docker-compose up
+docker-compose build
 docker-compose run api rake db:setup
 docker-compose run api rake db:migrate
+```
+
+## Usage
+### Tests
+
+```shell
 docker-compose run api rake db:migrate RAILS_ENV=test
+docker-compose run api rspec
+```
+
+### Run
+
+```shell
+docker-compose up
+open http://localhost:8000
 ```
 
 ## TODO
