@@ -9,6 +9,17 @@ export const listCategories = () => {
   .then(response => response.json());
 }
 
+export const listVideos = () => {
+  return fetch('/api/videos',
+    {
+      method: "GET",
+      headers: {
+        "Accept": "application/json"
+      },
+    })
+  .then(response => response.json());
+}
+
 export const createVideo = formData => {
   return fetch('/api/videos',
     {
