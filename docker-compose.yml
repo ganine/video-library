@@ -31,5 +31,15 @@ services:
     depends_on:
       - api
 
+  nginx:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.nginx
+    ports:
+      - "8000:8000"
+    links:
+      - api
+      - spa
+
 volumes:
   api-db:
