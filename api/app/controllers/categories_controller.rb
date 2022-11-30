@@ -1,8 +1,14 @@
 class CategoriesController < ApplicationController
-  # GET /categories
   def index
-    @categories = Category.all
+    categories = list_categories
+    render json: categories
+  end
 
-    render json: @categories
+  private
+
+  def list_categories
+    Category.find_each.map do |category|
+      CategorySerializer.new(category)
+    end
   end
 end
