@@ -6,9 +6,15 @@ const UploadPage = () => {
 
   return (
     <div className="upload-page">
-      <Link to={`/`}>
-        Video List
-      </Link>
+
+      <nav className="navbar bg-light app-navbar">
+        <div className="container-fluid">
+          <a className="navbar-brand h2">Upload Video</a>
+          <Link to={`/`} className="nav-link">
+            <button className="btn btn-outline-secondary">Back</button>
+          </Link>
+        </div>
+      </nav>
 
       <VideoForm />
     </div>

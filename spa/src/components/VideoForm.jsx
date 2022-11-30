@@ -1,12 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import {listCategories, createVideo} from "../services/API";
 
+import "./VideoForm.css";
+
 const VideoForm = props => {
   const [message, setMessage] = useState("");
   const [categories, setCategories] = useState([]);
 
   const [title, setTitle] = useState("");
-  // const [file, setFile] = useState("");
   const [categoryId, setCategoryId] = useState("");
 
   useEffect(() => {
@@ -23,7 +24,6 @@ const VideoForm = props => {
       .then(data => {
         setMessage("Video successfully uploaded");
         setTitle("");
-        // setFile("");
         event.target.file.value = null;
         setCategoryId("");
       })
@@ -34,42 +34,56 @@ const VideoForm = props => {
 
   return (
     <form className="video-form" onSubmit={submitForm}>
-      <div>{message}</div>
+      {
+        message &&
+        <div class="alert alert-secondary" role="alert">
+          {message}
+        </div>
+      }
 
-      <label htmlFor="title">
-        Title
+      <div className="mb-3">
+        <label htmlFor="title" className="form-label">
+          Title
+        </label>
         <input
+          id="title"
           type="text"
           name="title" 
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           onBlur={(e) => setTitle(e.target.value)}
           required
+          className="form-control"
         />
-      </label>
+      </div>
 
-      <p/>
-      <label htmlFor="file" >
-        File
+      <div className="mb-3">
+        <label htmlFor="file" className="form-label">
+          File
+        </label>
         <input
+          id="file"
           type="file"
           name="file"
-          // onChange={(e) => setFile(e.target.files[0])}
-          // onBlur={(e) => setFile(e.target.files[0])}
-          accept="video/mp4"
+          accept="video/mp4, video/mov"
           required
+          className="form-control"
         />
-      </label>
+      </div>
 
-      <p/>
-      <label htmlFor="category_id">
-        Category
+
+      <div className="mb-3">
+        <label htmlFor="category" className="form-label">
+          Category
+        </label>
         <select
+          id="category"
           name="category_id"
           value={categoryId}
           onChange={e => setCategoryId(e.target.value)}
           onBlur={e => setCategoryId(e.target.value)}
           required
+          className="form-select"
         >
           <option />
           {categories.map(category => (
@@ -78,10 +92,9 @@ const VideoForm = props => {
             </option>
           ))}
         </select>
-      </label>
+      </div>
 
-      <p/>
-      <input type="submit" value="Submit" />
+      <input type="submit" value="Submit" className="btn btn-primary"/>
     </form>
   );
   

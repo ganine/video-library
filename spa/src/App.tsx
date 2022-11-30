@@ -12,7 +12,7 @@ function App() {
         <h1>Video Library</h1>
       </header>
 
-      <div className="container-md text-center">
+      <div className="container-md">
 
         <div className="row app-content">
           <div className="col">

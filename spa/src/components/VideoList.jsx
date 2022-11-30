@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import Video from "../components/Video";
 import { listVideos } from "../services/API";
 
@@ -15,19 +14,15 @@ const VideoList = () => {
 
   return (
     <div className="video-list">
-
-      <Link to={`/upload`} className="upload-video" />
-
       {!videos.length ? (
         <p>No videos uploaded yet!</p>
       ) : (
         videos.map((video) => (
-          <li>
-            <Video
-              key={video.id}
-              title={video.title}
-            />
-          </li>
+          <Video
+            key={video.id}
+            title={video.title}
+            thumbnail={video.file.thumbnails.large}
+          />
         ))
       )}
     </div>
