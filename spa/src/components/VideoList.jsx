@@ -21,6 +21,7 @@ const VideoList = () => {
           <Video
             key={video.id}
             title={video.title}
+            url={video.file.url}
             thumbnail={video.file.thumbnails.large}
           />
         ))

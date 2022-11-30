@@ -3,12 +3,21 @@ import React from "react";
 import "./Video.css";
 
 const Video = (props) => {
-  const { title, thumbnail } = props;
+  const { url, title, thumbnail } = props;
 
   return (
     <div className="card video">
+      <video
+        controls
+        src={url}
+        preload="none"
+        poster={thumbnail}
+        title={title}
+        className="video-player"
+      />
+
       <div className="card-body">
-        <img src={thumbnail} className="card-img-top" alt={title}/>
+        {title}
       </div>
     </div>
   );

@@ -39,5 +39,5 @@ open http://localhost:8000
 - [x] create category resource
 - [x] create video resource
 - [x] generate React app
-- [ ] create video upload page
-- [ ] create video list page
+- [x] create video upload page
+- [x] create video list page
